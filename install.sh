@@ -4,7 +4,7 @@
 # - https://github.com/dahlia/nvimrc/blob/master/install.sh
 
 # Link tmux configuration to ~/.config/tmux
-tmuxrc_name="zhsrc"
+tmuxrc_name="tmuxrc"
 src_tmuxrc_dir="$(pwd)"
 src_tmuxrc="$src_tmux_dir/$tmuxrc_name"
 dst_tmux_dir="$HOME/.config/tmux"
