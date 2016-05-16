@@ -17,6 +17,11 @@ then
 fi
 
 echo "Tmux configuration directory: $dst_tmux_dir"
+if [[ ! -d "$dst_tmux_dir" ]]
+then
+  mkdir "$dst_tmux_dir"
+fi
+
 if [[ ! -f "$dst_tmuxrc" || "$(cat "$src_tmuxrc")" != "$(cat "$dst_tmuxrc")" ]]
 then
   rm -f "$dst_tmux_dir"
