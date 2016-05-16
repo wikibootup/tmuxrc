@@ -7,20 +7,16 @@
 tmuxrc_name="tmuxrc"
 src_tmuxrc_dir="$(pwd)"
 src_tmuxrc="$src_tmux_dir/$tmuxrc_name"
-dst_tmux_dir="$HOME/.config/tmux"
+link_path="$HOME/.config"
+dst_tmux_dir="$link_path/tmux"
 dst_tmuxrc="$dst_tmux_dir/$tmuxrc_name"
-
 path_dir="$HOME/.dotfiles"
-if [[ ! -d "$path_dir" ]]
-then
-  mkdir "$path_dir"
-fi
+
+# make directories
+mkdir -p "$path_dir"
+mkdir -p "$dst_tmux_dir"
 
 echo "Tmux configuration directory: $dst_tmux_dir"
-if [[ ! -d "$dst_tmux_dir" ]]
-then
-  mkdir "$dst_tmux_dir"
-fi
 
 if [[ ! -f "$dst_tmuxrc" || "$(cat "$src_tmuxrc")" != "$(cat "$dst_tmuxrc")" ]]
 then
