@@ -3,11 +3,11 @@
 # References
 # - https://github.com/dahlia/nvimrc/blob/master/install.sh
 
-# Link tmux configuration to ~/.config/tmux
+# Link tmux configuration to ~/dotfiles/tmux
 tmuxrc_name="tmuxrc"
 src_tmuxrc_dir="$(pwd)"
 src_tmuxrc="$src_tmux_dir/$tmuxrc_name"
-link_path="$HOME/.config"
+link_path="$HOME/dotfiles"
 dst_tmux_dir="$link_path/tmux"
 dst_tmuxrc="$dst_tmux_dir/$tmuxrc_name"
 path_dir="$HOME/.dotfiles"
@@ -26,9 +26,9 @@ fi
 
 if [[ ! -f "$HOME/.tmux.conf" ]]
 then
-  ln -s $HOME/.config/tmux/tmux.conf $HOME/.tmux.conf
+  ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 else
   mv "$HOME/.tmux.conf" "$path_dir/tmuxrc/.tmux.conf.bak"
-  ln -s $HOME/.config/tmux/tmux.conf $HOME/.tmux.conf
+  ln -s $HOME/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
   echo "Previous .tmux.conf was moved to $path_dir/tmuxrc/.tmux.conf.bak"
 fi
